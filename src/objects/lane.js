@@ -14,4 +14,12 @@ export default class Lane {
     addVehicleToQueue (vehicle) {
         this.#queue.push(vehicle);
     }
+
+    getQueue() {
+        return this.#queue;
+    }
+
+    getPumps() {
+        return this.#pumps;
+    }
 };

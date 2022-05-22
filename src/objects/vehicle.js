@@ -28,4 +28,12 @@ export default class Vehicle {
     getVehicleType () {
         return this.#type;
     }
+
+    getCapacity () {
+        return this.#capacity;
+    }
+
+    toString() {
+        return `${this.#type}, ${this.#capacity}, ${this.#fuelType}, ${this.#currentFuelQuantity}`;
+    }
 };

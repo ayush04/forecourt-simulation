@@ -1,14 +1,17 @@
+import Utils from "../utils.js";
+
 export default class Pump {
     #transactions;
     #vehiclesServiced;
     #name;
-    #isAvailable;
+    #assignedVehicle;
+
+    #DISPENSE_RATE = 1.5;
 
     constructor(name) {
         this.#transactions = [];
         this.#vehiclesServiced = 0;
         this.#name = name;
-        this.#isAvailable = true;
     }
 
     addTransaction ({ fuelType, quantity }) {
@@ -30,15 +33,23 @@ export default class Pump {
         return this.#vehiclesServiced;
     }
 
-    isPumpAvailable () {
-        return this.#isAvailable;
+    getAssignedVehicle () {
+        return this.#assignedVehicle;
     }
 
-    setIsPumpAvailable (available) {
-        this.#isAvailable = available;
+    setAssignedVehicle (vehicle) {
+        this.#assignedVehicle = vehicle;
     }
 
     getPumpName () {
         return this.#name;
+    }
+
+    getTimeToFill (vehicle) {
+        return Utils.round((vehicle.getCapacity() - vehicle.getCurrentFuelQuantity()) / this.#DISPENSE_RATE);
+    }
+
+    toString() {
+        return `${this.#name}, ${this.#assignedVehicle}`;
     }
 };

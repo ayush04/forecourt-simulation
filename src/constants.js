@@ -4,7 +4,7 @@ export const FUEL_TYPE = {
     UNLEADED: 3
 };
 
-const VEHICLE_TYPE = {
+const VEHICLES = {
     CAR: {
         CAPACITY: 10,
         FUELTYPE: [FUEL_TYPE.DIESEL, FUEL_TYPE.LPG, FUEL_TYPE.UNLEADED]
@@ -19,4 +19,6 @@ const VEHICLE_TYPE = {
     }
 };
 
-export default VEHICLE_TYPE;
+export const VEHICLE_TYPE = Object.keys(VEHICLES);
+
+export default VEHICLES;
