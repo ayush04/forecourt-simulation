@@ -12,4 +12,4 @@ Comments are provided to explain its working
 
 
 ## TODO
-To add to the realism of the simulation and to account for drivers’ agitation, should a vehicle not be fuelled randomly between one and two seconds, it will leave the forecourt.
+To add to the realism of the simulation and account for drivers’ agitation, if a vehicle is not randomly fuelled between one and two seconds, it should leave the forecourt.
